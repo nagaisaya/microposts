@@ -3,7 +3,9 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+      <%= render 'shared/error_messages', object: f.object %> <!-- ここを追加 -->
+
+    <div class="proflie_left">
       
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
@@ -16,6 +18,20 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+  
+    <div class="profile_right">
+      <%= f.label :肩書き %>
+      <%= f.text_field :position, class: 'form-control' %>
+
+      <%= f.label :自己紹介 %>
+      <%= f.text_area :s_introduction, class: 'form-control' %>
+    </div>
+      
+    <div class="gravatar_edit">
+       <%= gravatar_for @user %>
+       <a href="http://gravatar.com/emails" target="_blank">画像編集</a>
+    </div>
       
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>

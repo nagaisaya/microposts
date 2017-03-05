@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   has_secure_password
+  validates :position, allow_blank: true, length: { minimum: 2, maximum: 50 }
+  validates :s_introduction, allow_blank: true, length: { maximum: 140 }
+
   has_many :microposts
   has_many :following_relationships, class_name:  "Relationship",
                                      foreign_key: "follower_id",
@@ -32,4 +35,3 @@ class User < ActiveRecord::Base
     following_users.include?(other_user)
   end
 end
-
