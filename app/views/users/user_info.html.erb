@@ -1,0 +1,10 @@
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <ul>
+      <li>position　：　<%= @user.position %></li>
+      <li>s_introduction　：　<%= @user.s_introduction %></li>
+    </ul>
