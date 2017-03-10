@@ -4,12 +4,12 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %> <!-- ここを追加 -->
-      <%= form_for(@user) do |f| %>
+
+
       <%= image_tag @user.avatar.url if @user.avatar %>
       <%= f.label :avatar %>
       <%= f.file_field :avatar %>
-      <%= f.submit %>
-<% end %>
+
     <div class="proflie_left">
       
       <%= f.label :name %>

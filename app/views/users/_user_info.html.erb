@@ -13,3 +13,5 @@
   <li><%= link_to "フォロー", followings_user_path(@user) %></li>
   <li><%= link_to "フォロワー", followers_user_path(@user) %></li>
 </ul>
+
+<%= image_tag @user.avatar.url if @user.avatar %>
